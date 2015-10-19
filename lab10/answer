@@ -1,0 +1,13 @@
+1. A. 	we are not stopping the IntStream.generate(() -> 1), 
+		so whenever the forEach loop asks the IntStreamit for the next element in the pipeline 
+		the generator generates one and added to the stream, although the distinct() method don't 
+		allow only one type to go through the pipeline to the consumer. 
+		So we need to stop the generator at some point.
+		we can fix this by put a limit on it this way 
+		***IntStream ones = IntStream.generate(() -> 1).limit(20).distinct();***
+		
+	B. 	System.out.println(stringStream.collect(Collectors.joining(",")));
+	
+2. 
+	
+	

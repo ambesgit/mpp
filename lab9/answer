@@ -1,0 +1,66 @@
+Problem 1.
+	a.  1. imperative languages require the programmers to specify how to do what they want to do
+		   in functional programming , programmers only require what they want to do 
+		   (the order of execution doesn't matter in case of functional programming unlike the imperative one )
+		2. imperative languages don't allow to pass functions as arguments or return functions as a return type while 
+			functional programming allow to do so
+	b.  declarative programming is programming what you want to do not how you want to do
+		for example SQL in database: "select * from tableName1 join tableName2 where tableName2.columnA=tableName2.columnB sortBy columnB", Here you don't specify how you want to retrieve the data
+		As a programmer, you don't specify what kind of algorithm will be used to sort the result of the query, the choose will be done for you by the language itself 
+	c. function interface is an interface with only one abstract method declare on it 
+		An interface with only one declared method is called functor
+		Closure in functional programming is accessing of variables by from the surrounding by a function
+		So the function which accesses the variables from the environment is called closure
+		
+		functional interface (Functor):
+			interface functionalInterface<A,B>{
+				B iAmTheOnlyMethod(A a);
+			}
+			
+		Closure sample:
+			class ClosureSample implements functionalInterface<Integer,Integer>{
+				int height=90;
+				int iAmTheOnlyMethod(int x){
+					return x*height;
+				}
+		}
+	d.  1. it is compact and fewer lines of code can replace many lines of code in Java
+		2. enables programmers to pass functions as an argument even return function as return value
+		3. functional programming provides the benefit of getting the same result from a given function, no matter the state of the surrounding environment 
+	e.  i.  λx.2x*x;
+		ii. λxy.y-x+x(power of y) //i couldn't find the tool to make it y powerof x so i write it this way;
+		ii  λxyz.z-(x+y)
+	f.  i. 	 parameters: no parameters
+			 free variables: s,t
+		ii.	 parameters: u , v
+			 free variables: b,a,x
+		iii.  parameters: s,t
+			  free variables: ignoreCase,
+	g. 
+		class MyClass{
+			
+		
+				BiFunction<MyClass> myclass=this::equals;
+			
+			
+				@Override
+				public boolean equals(Object obj) {	
+					if(this==(MyClass)obj){
+						return true;
+						
+					}
+					
+					return false;
+				}	
+			
+			}
+			
+		interface BiFunction<T>{	
+				public boolean test(T o2);	
+				
+			}
+	h. Method reference System.out::println  will be expressed as follow using lambda
+			(x)->System.out.println(x);	
+			this is a Static method reference type
+	i. 
+				
