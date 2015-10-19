@@ -1,0 +1,42 @@
+	1.A, ProblemOne A
+			The class ArrayList extends is:  
+				AbstractList<E>
+			The interfaces implemented by ArrayList are:
+				1.Serializable
+				2.Cloneable
+				3.Iterable
+				4.Collection
+				5. List
+				6.RandomAccess
+			
+	1.B,ProblemOne B  (Employee class don't override the equals method)
+	
+		The Employee class doesn't override the equals method so the removeDuplicate method 
+		didn't remove any object of Employee because there is no duplicate of Employee object in the list
+		in fact there are Employee objects with the same value of name and salary , but
+		this is not mean the Employee object is duplicated so the two list l1 and l2 have different size
+		SO you need to correct the equals method in employee by adding the @Override annotation and change the
+		Employee type in the parameter to Object
+		
+	1.C,ProblemOne C  (Employee class don't override the hashCode method )
+	
+		In this particular problem, we are using hashMap and we are using the Employee object as a key
+		which is the sources of error here. Because we override the equals method, we have to override the
+		hashCode method too so the hash function knows which field of the Employee object to use to generate 
+		the key. When i override the hashCode and use the name for hashCode generation, it works perfect
+		
+	1.D,ProblemOne D (Employee object is immutable, the visited field is changed during visit, affects the contains method of list)
+	
+		We are using the Employee object as key in the hashMap and as the same time we are changing the Employee object
+		when visited it, this resulted to a different hash value which the contains method uses it to check of the list have this 
+		object in the specified slot
+	1.E,ProblemOne E (By Overriding in a class, and by implementing default method or declaring the method in subinterfaces )
+		
+		i. 	When it is class, the class has to override the method or declare that method as abstract 
+		ii. When it is interface the subinterface has to provide a default implementation of the method or declare the method
+	
+	
+				
+		
+			 
+		
